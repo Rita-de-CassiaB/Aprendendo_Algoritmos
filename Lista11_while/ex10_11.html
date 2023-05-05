@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira um valor mínimo <input id="input_minimo" type="number"> </br>
+    Insira um valor máximo <input id="input_maximo" type="number"> </br>
+
+    <button onclick="pares()">S2 Pares</button>
+
+    <div id="div_result"></div>
+
+</body>
+</html>
+<Script>
+    function pares() {
+        var min = Number(input_minimo.value)
+        var max = Number(input_maximo.value)
+
+        if (min <= max) {
+        while (min <= max) {  
+            div_result.innerHTML += `${min}</br>`;
+              min += 1;
+        }
+       
+        } else 
+        alert(`Insira um intervalo válido`)
+
+    }
+</Script>

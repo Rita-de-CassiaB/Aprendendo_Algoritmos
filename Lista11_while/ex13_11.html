@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    De quantos dias é o seu intervalo de musculação <input type="number" id="input_muscuulacao"> 
+
+<button onclick="Exibir()">Exibir rotina mensal</button>
+
+<div id="div_result"></div>
+
+</body>
+</html>
+<Script>
+function Exibir() {
+    var intervalo = Number(input_muscuulacao.value);
+
+    var status = 1;
+
+    while (status <= 30) {
+        
+if (status == 1) {
+    div_result.innerHTML += `Dia ${status} - Musculação </br>`
+   
+} else if ((status - 1)% intervalo == 0) {
+    div_result.innerHTML += `Dia ${status} - Musculação </br>`
+    
+} else {
+    div_result.innerHTML += `Dia ${status} - Comer, dormir etc </br>`
+
+} 
+ status += 1
+} 
+}
+
+</Script>

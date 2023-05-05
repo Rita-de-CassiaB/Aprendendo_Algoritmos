@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajuda Emergencial</title>
+</head>
+<body>
+    Valor da Renda: <input type="number" id="VRenda"> <br/> <br/>
+    Valor da Renda Familiar: <input type="number" id="VRendaFamiliar"> <br/> <br/>
+
+<button onclick="Avaliar()">Terei o auxílio?</button>
+
+<div id="div_result"></div>
+
+</body>
+</html>
+<Script>
+    function Avaliar() {
+        var Renda = Number(VRenda.value);
+        var RendaF = Number(VRendaFamiliar.value);
+
+        if (Renda < 2000 || RendaF <3000) {
+            div_result.innerHTML =  `Você terá direito ao auxilio`
+        } else {
+            div_result.innerHTML =  `Sem direito ao auxilio`
+        }
+
+
+
+        
+    }
+</Script>

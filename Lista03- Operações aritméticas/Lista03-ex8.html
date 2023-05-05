@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Ball</title>
+</head>
+<body>
+    
+    <center><h2>Meu personagem em Dragon Ball</h2></center>
+
+    Insira o nome do guerreiro <input id="nome_guerreiro"> <br><br>
+    Insira o ki normal do guerreiro <input type="number" id="ki_guerreiro"> <br><br>
+
+    <button onclick="ki_forma() ">
+        Ver ki em cada forma
+        </button>
+
+
+</body>
+</html>
+
+<script>
+function ki_forma() {
+    var ki_sayajin = ki_guerreiro.value * 50
+    var ki_sayajin2 = ki_guerreiro.value * 100
+
+    alert ("O guerreiro " + nome_guerreiro.value + 
+    " em forma Super Sayajin tem sua força " + ki_sayajin);
+
+    alert ("O guerreiro " + nome_guerreiro.value + 
+    " em forma Super Sayajin 2 tem sua força " + ki_sayajin2);
+}
+
+
+</script>

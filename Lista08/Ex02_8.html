@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Você tem direito à ajuda do governo na Crise do Covid19?</h1>
+
+Insira sua renda <input id="input_renda"><br/>
+Insira a renda total familiar <input id="input_rendatotal"> <br/>
+
+<button onclick="verificacao()"> Verificar ajuda </button>
+
+</body>
+</html>
+
+<Script>
+    function verificacao() {
+        var renda1 = Number(input_renda.value);
+        var renda2 = Number(input_rendatotal.value);
+
+        if (renda1 < 1050 && renda2 <2100) {
+            alert ("Você terá direito!");
+        } else {
+            alert ("Você NÃO terá direito!");
+        }
+
+    }
+</Script>

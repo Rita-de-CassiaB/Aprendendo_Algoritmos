@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center><h2>Tabuada</h2></center>
+Qual tabuada deseja ver? Entre 2 e 9 <input type="number" id="inputmin_tabuada"> <br/>
+Até qual numero a tabuada deve ser construída? <input type="number" id="inputmax_tabuada">
+
+<button onclick="analisar()">Ver tabuada</button>
+
+<div id="div_result"></div> 
+
+</body>
+</html>
+<Script>
+    function analisar() {
+       
+    var min = Number(inputmin_tabuada.value);
+    var status = 1 ;
+    var max = Number(inputmax_tabuada.value);
+    
+        while (status <= max) {
+            var total = (min * status);
+            status += 1 
+
+            if (total % 2 == 0) {
+                div_result.innerHTML += `<span style="color: blue;"></br>${min} x ${status} = ${total} </br></span>`               
+            } else {
+                div_result.innerHTML += `<span style="color: red;"></br>${min} x ${status} = ${total} </br></span>`
+
+            }
+        
+
+        }
+
+}
+
+</Script>

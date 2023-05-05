@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira sua idade <input type="number" id="input_idade">
+
+    <button onclick="descrever()">Descrever as fases da vida</button>
+
+<div id="div_result"></div>
+
+</body>
+</html>
+<Script>
+    function descrever() {
+        idadeM = Number(input_idade.value);
+        var idade = 1;
+        var cucu = cucu
+
+        while (idade <= idadeM) {
+            if (idade <= 4) {
+                div_result.innerHTML += `</br> ${idade} anos (Primeira Infância) </br>`
+            } else if (idade <= 6) {
+                div_result.innerHTML += `</br> ${idade} anos (Pré-Escolar) </br>`
+            } else if (idade <=10) {
+                div_result.innerHTML += `</br> ${idade} anos (Segunda Infância) </br>`
+            } else if (idade <=18) {
+                div_result.innerHTML += `</br> ${idade} anos (Adolescência) </br>`
+            } else if (idade <=50) {
+                div_result.innerHTML += `</br> ${idade} anos (Adulto) </br>`
+            } else if (idade <= 100) {
+                div_result.innerHTML += `</br> ${idade} anos (Melhor idade) </br>`
+            }else {
+                div_result.innerHTML += `</br> ${idade} anos (Matusalém) </br>`
+            }
+        idade += 1;
+        }
+    }
+</Script>

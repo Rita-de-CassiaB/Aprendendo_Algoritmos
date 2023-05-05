@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Aposentadoria</title>
+</head>
+<body>
+<center>Com quantos anos você vai aposentar?</center> <br><br>
+
+
+    Insira sua idade <input type="number" id="input_idade"> <br><br>
+
+    <button onclick="H_aposent()">
+    Aposentadoria Homem</button> <br><br>
+
+    <button onclick="M_aposent()">
+        Aposentadoria Mulher</button> <br>
+
+
+</body>
+</html>
+
+<script>
+
+
+    function H_aposent () {
+        var idade = Number(input_idade.value);
+        Alert ((idade - 70));
+    }
+    
+    function M_aposent () {
+        var idade = Number(input_idade.value);
+        alert ((idade - 60));
+    }
+
+</script>

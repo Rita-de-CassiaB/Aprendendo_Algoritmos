@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amamos Pizza</title>
+</head>
+    <body>
+
+        <center>Bem-vinda Equipe Lantra</center> <br><br>
+
+        Insira o Preço da Pizza
+        <input id="valor_pizza"> <br><br>
+
+        Insira a Quantidade de amigos
+        <input type="number" id="quant_amigos"> <br><br>
+
+        <button onclick="calcular()">
+            #LovePizza
+        </button>
+
+    </body>
+</html>
+
+<script>
+    function calcular() {
+    var valor = input_valor_pizza.value;
+    var amigos = input_quant_amigos.value;
+    var preço_pessoa = (input_valor_pizza.value / input_quant_amigos.value);
+
+    alert("Cada um dos " + amigos + "vai pagar R$" + preço_pessoa);
+    }
+
+</script>
+    

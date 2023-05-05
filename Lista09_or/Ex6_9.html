@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meio de transporte</title>
+</head>
+<body>
+    <h1><center>Calculadora de cansaço do aluno SpTech</center></h1> <br/><br/>
+    Meio de transporte: 
+
+    <Button onclick="analisar()">Calcular Cansaço</Button>
+
+    <div id="div_result"></div>
+
+    <select id="MTransporte">
+        <option value="Oni">Ônibus</option>
+        <option value="Met">Metrô</option>
+        <option value="Car">Carro</option>
+        <option value="Bic">Bicicleta</option>
+        <option value="Lot">Lotação</option>
+    </select>
+</body>
+</html>
+<Script>
+    function analisar() {
+        var Opcoes = MTransporte.value;
+
+        if (Opcoes == "Car" || Opcoes == "Bic") {
+            div_result.innerHTML = `Tá tranquilo... `;
+        } else if (Opcoes == "Met") {
+            div_result.innerHTML = `Um pouco cansado` ;
+        } else {
+            div_result.innerHTML = `Vish... vive cansado`;
+        }
+          
+    }
+
+</Script>

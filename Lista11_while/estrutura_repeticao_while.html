@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=4, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="contar_10()">Contar até 10</button>
+    <button onclick="contar_100()">Contar até 100</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    /*
+        "while" - traduzido do inglês como "enquanto";
+
+        representa uma estrutura de REPETIÇÃO;
+        serve para executar um bloco de código ENQUANTO a condição de repetição for verdadeira;
+
+        as estruturas de repetição servem para facilitar e otimizar a estruturação de lógicas que sejam repetitivas, a fim de diminuir a quantidade de código;
+        
+        seu funcionamento é parecido com o "if", porém ao final da execução do bloco de código, volta para fazer a validação de novo, a fim de repetir a execução do código caso ainda seja verdadeira
+
+        sintaxe: 
+            - while (true) { alert("Olá mundo!")  }
+            - enquanto (condição for verdadeira) { ...executarei o que estiver aqui... }
+
+        mas temos um problema caso condição sempre seja verdadeira:
+            a estrutura de repetição cria um "looping infinito", pois a condição sempre será atingida;
+
+        ou seja, caso não tenha um controle da estrutura de repetição para que em algum momento a condição se torne falsa, irá repetir INFINITAMENTE
+
+        para evitar isso, na função "listar" abaixo, temos a variável "contador", que serve para controlar as repetições
+        a variável "contador" será utilizada a cada repetição para realizar uma nova validação, e caso seja verdadeira, executará o bloco de código inteiro
+
+        a cada execução da estrutura de repetição, atualizamos a variável "contador", então o teste da condição será executado de novo
+        exemplo: 
+            contador começa em 0;
+            enquanto o contador for menor que 10, executa o looping e soma 1 ao contador;
+            ao final da execução atual, volta ao início do looping com o contador atualizado;
+            valida novamente se o contador ainda é menor que 10;
+            caso a condição seja válida (ou seja, contador está em 9 ou menos), ainda executa o looping;
+    
+        é extremamente essencial a manipulação do contador;
+        caso não incremente o contador, a validação sempre será verdadeira, criando novamente o looping infinito;
+    */
+
+    // versão 1, começando em 1 e indo até 10
+    function contar_10 () {
+        var contador = 1;
+
+        div_mensagem.innerHTML = ""; // limpa a div
+
+        while (contador <= 10) { // enquanto o contador for menor que 11, repita o bloco
+            div_mensagem.innerHTML += `${contador} <br>`; // exibe o atual antes de incrementar
+            contador += 1; // incrementa depois de exibir
+        }
+    }
+
+    // versão 2, começando em 0 e indo até 99, mas como incrementa antes, exibe de 1 a 100
+    function contar_100 () {
+        var contador = 0;
+        
+        div_mensagem.innerHTML = ""; // limpa a div
+        
+        while (contador < 100) { // enquanto o contador for menor que 10, repita o bloco
+            contador += 1; // incrementa antes de exibir
+            div_mensagem.innerHTML += `${contador} <br>`; // exibe o incrementado
+        }
+    }
+
+    /*
+    // utilizando função para repetir execução de algo
+    function contar_funcao_dinamica () {
+        contador += 1;
+        div_mensagem.innerHTML += `${contador} <br>`;
+        
+        if (contador < 50) {
+            contar();
+        }
+    }
+
+    // função manual que dá muito trabalho
+    function contar_manual () {
+        div_mensagem.innerHTML = `
+            1 <br>
+            2 <br>
+            3 <br>
+            4 <br>
+            5 <br>
+            6 <br>
+            7 <br>
+            8 <br>
+            9 <br>
+            10 <br>
+        `;
+    }
+    */
+</script>

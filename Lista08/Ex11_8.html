@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center><h1>Seja Bem-Vindo(a) ao Sistema do Metrô de São Paulo</h1>
+    <h3>Recargas no Cartão Fidelidade</h3></center> <br/>
+
+    Quantidade de passagens que deseja adquirir <input type="number" id="input_qnt">
+    
+    <button onclick="avaliar()"> Comprar</button>
+
+    <div id="div_result"></div>
+</body>
+</html>
+<Script>
+
+    
+    function avaliar() {
+
+    var quantidade = Number(input_qnt.value);
+    var passagem = Number(4.40);
+
+       if (quantidade > 8 && quantidade < 50) {
+            if (quantidade <= 19) {
+                var passagem1 = passagem - (passagem * 0.03);
+                var total = (passagem1 * quantidade);
+
+                div_result.innerHTML = `Total a pagar R$${total}`
+
+            } else if (quantidade <=49) {
+                 var passagem1 = passagem - (passagem * 0.05);
+                 var total = (passagem1 * quantidade);
+
+            div_result.innerHTML = `Total a pagar R$${total}`
+
+            } else {
+                 var passagem1 = passagem - (passagem * 0.07);
+                 var total = (passagem1 * quantidade);
+
+            div_result.innerHTML = `Total a pagar R$${total}`
+
+        }
+
+       } else {
+        alert("Quantidade inválida para a Fidelidade!");
+       } 
+    }
+</Script>

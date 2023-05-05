@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Limite inferior de amostragem <input type="number" id="input_min" ></br>
+    Limite superior de amostragem <input type="number" id="input_max" ></br>
+    Insira um número para testar a divisibilidade <input type="number" id="input_div" ></br>
+
+<button onclick="executar()">Contar</button>
+
+<div id="div_result"></div>
+<div id="div_result2"></div>
+
+
+</body>
+</html>
+<Script>
+function executar() {
+
+    var min = Number(input_min.value)
+    var max = Number(input_max.value)
+    var div = Number (input_div.value)
+
+   if (min < 1) {
+    alert ("Insira um número inferior maior que 1")
+   } else if (max > 100 || max < min) {
+    alert("Insira um número superior menor que 100 e maior que o limite inferior")
+   } else if (div < 3 || div > 10) {
+    alert ("Insira um valor de divisibilidade entre 3 e 10")
+   } else {
+    
+    while (min <= max) {
+
+    div_result.innerHTML = ` ${max % div}`;
+
+
+
+
+            div_result2.innerHTML `
+            QUANTIDADE TOTAL DE NÚMEROS EXIBIDOS: ${max}
+
+    SOMATÓRIO DOS NÚMEROS EXIBIDOS: 999 
+
+    MÉDIA DOS NÚMEROS EXIBIDOS: 99,99 
+
+    MAIOR NÚMERO EXIBIDO: 99 
+
+    MENOR NÚMERO EXIBIDO: ${min}
+            `
+        }
+        min += 1;
+    }
+
+   }
+
+}
+
+</Script>

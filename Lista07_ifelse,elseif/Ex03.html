@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center><h1>O que cada temperatura significa para o ser humano</h1></center> <br/><br/>
+
+    Insira a temperatura <input type="number" id="input_temperatura">
+
+    <Button onclick="analise()">
+Ler Temperatura
+    </Button>
+
+    <div id="div_result"></div>
+
+</body>
+</html>
+
+<Script>
+    function analise() {
+        var temp = Number(input_temperatura.value); 
+
+        if (temp < 14) {
+            div_result.innerHTML = `Congelante (até menos de 14ºC)`
+        } else  if ( temp < 21) {
+            div_result.innerHTML = `Com Frio (entre 14ºC e 21ºC)`
+        }else  if ( temp < 24) {
+            div_result.innerHTML = `Confortável (mais de 21ºC até 24ºC)`
+        }else  if ( temp < 31 ) {
+            div_result.innerHTML = `Com Calor (mais de 24ºC até 31ºC)`
+        } else {
+            div_result.innerHTML = `Calor escaldante (mais de 31ºC)` 
+        }
+        
+    }
+   
+</Script>

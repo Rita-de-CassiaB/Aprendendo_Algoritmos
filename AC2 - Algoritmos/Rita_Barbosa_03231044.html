@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Naruto e seus clones</h1>
+
+    Qual a quantidade de pontos de energia que o Naruto tem? <input type="number" id="input_qntpontos"> </br>
+    Qual a quantidade de clones desejada? <input type="number" id="input_qntclones"></br>
+    Qual a quantidade de clones por linha? <input type="number" id="input_qntcloneslinha"></br>
+
+    <button onclick="criar()">Criar clones</button>
+
+    <div id="div_result"></div>
+    <div id="div_frase"></div>
+</body>
+ 
+</html>
+<Script>
+
+    function criar() {
+
+        var qntpontos = Number(input_qntpontos.value);
+        var qntclones = Number(input_qntclones.value);
+        var qntenergia = (qntclones*20);
+        var qntcloneslinha = Number(input_qntcloneslinha.value);
+        var status = 0;
+        var sobra = (qntpontos - qntenergia);
+        var percentual = ((sobra / qntpontos) * 100);
+    
+
+        if (qntpontos < 20 || qntpontos > 5000 || qntclones < 0 || qntclones > 250 || qntcloneslinha < 0) {
+            alert(`ERRO NA ENTRADA DE DADOS – Energia tem que ser entre 20 e 5.000. Quantidade de Clones tem que ser entre 0 e 250. Quantidade de Clones por linha tem que ser maior que 0`)
+        } else if (qntpontos < qntenergia) {
+            alert(`ERRO NA ENTRADA DE DADOS - a Energia não é suficiente para a criação dos clones`)
+        } else {
+            while (status < qntclones) {
+                div_result.innerHTML += ` <center><img  width="100px" src="file:///C:/Users/Aluno/Desktop/Arquivos%20Tempor%C3%A1rios/AC2%20-%20Algoritmos/naruto.png"</center>`
+                status += 1 ;
+            }
+        }
+        div_frase.innerHTML = `
+ANÁLISE DA GERAÇÃO DE CLONES </br> </br>
+
+Energia Inicial: ${qntpontos}; </br></br> 
+
+Qtde de Clones: ${qntclones}; </br></br>
+
+Sobra de Energia: ${sobra} </br></br>
+`
+
+
+if (sobra > 1000 || qntclones > 50 || percentual >= 20) {
+    div_frase.innerHTML += `PROVAVELMENTE VOCE VAI GANHAR`;
+} else if (sobra > 500 || qntclones < 20 || qntclones > 50 || percentual >= 10) {
+    div_frase.innerHTML += `A LUTA VAI SER MUITO BOA`;
+} else {
+    div_frase.innerHTML += `TORÇA PARA O ADVERSÁRIO SER FRAQUINHO`;
+}    }
+</Script>

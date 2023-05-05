@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira um número de 0 a 100 <input id="input_numero" max="100">
+    <button onclick="analisar()"> Ver Divisores </button>
+
+     <div id="div_result"></div>
+
+</body>
+</html>
+<Script>
+
+function analisar() {
+    var numero = Number(input_numero.value);
+    div_result.innerHTML += `Divisiveis do número ${numero} </br>` 
+    for (var contador = 1; contador <= numero; contador ++){
+        if (numero % contador == 0) {
+           div_result.innerHTML += `${contador} </br>` 
+        }
+    }
+}
+</Script>

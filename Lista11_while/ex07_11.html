@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira um número   <input type="number" max="100" min="20" id="input_number"> <br/>
+
+    <button onclick="multiplicar()">Adoro multiplos de 5</button>
+
+    <div id="div_frase"></div>
+
+</body>
+</html>
+<Script>
+    function multiplicar() {
+        var status = 0;
+        var numero = Number(input_number.value);
+
+        while (status <= numero) {
+            if (status % 5 == 0) {
+                div_frase.innerHTML += `${status}</br>`
+            }
+            status += 1
+        }
+    }
+</Script>

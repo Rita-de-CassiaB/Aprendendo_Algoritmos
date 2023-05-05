@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input_frase">
+    <button onclick="dizer()">Diga algo sobre a disciplina de algoritmos</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function dizer () {
+        var texto = input_frase.value;
+
+        var contador = 1; // inicializa o contador com o valor 1
+        while (contador <= 7) { // enquanto o contador for menor ou igual a 7, repete o bloco de código
+            div_mensagem.innerHTML += `${contador}. ${texto} <br>`;
+            contador += 1; // incrementa o contador antes de repetir o bloco de código
+        }
+    }
+</script>

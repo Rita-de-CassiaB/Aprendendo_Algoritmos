@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1><center>Como andam suas economias?</center></h1>
+    Qual é sua meta de economia? <input type="number" id="input_meta"> <br/> <br/>
+    Quanto você tem guardado? <input type="number" id="input_economia"> <br/> <br/>
+
+    <button onclick="analise()"> Analisar economia</button>
+
+    <div id="div_result"></div>
+
+</body>
+</html>
+<Script>
+function analise() {
+    var meta = Number(input_meta.value);
+    var economia = Number(input_economia.value);
+    var diferença = (economia - meta);
+    var falta = (meta - economia);
+
+        if (meta <= economia) {
+            div_result.innerHTML = `Meta ultrapassada em ${diferença}`
+
+            if ( meta == economia) {
+                div_result.innerHTML = `Parabéns, meta alcançada!`        
+             }
+        } else if (meta > economia) {
+            div_result.innerHTML = `Força! Ainda em busca da meta! Falta ${falta}`
+            }
+    }
+</Script>

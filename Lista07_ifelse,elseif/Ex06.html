@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center><h1>Querido Torcedor</h1></center>
+Qual time grande São Paulo você torce? <input type="text" id="input_time"> <br/><br/>
+
+<button onclick="sobre()"> Fale sobre esse time</button>
+
+<span id="span_result"></span>
+
+
+</body>
+</html>
+<Script>
+    function sobre() {
+        var time = input_time.value
+
+        if (time == 'Corinthians') {
+            
+            span_result.style.background = "Black";
+            span_result.style.color = "white";
+
+            span_result.innerHTML = `
+            Salve o Corinthians 
+            `;
+
+        } else if (time == 'Palmeiras') {
+            
+            span_result.style.background = "Green";
+            span_result.style.color = "White";
+
+            span_result.innerHTML = `
+            Salve o alviverde imponente
+            `
+
+        } else if (time == 'Santos') {
+
+            span_result.style.background = "White";
+            span_result.style.color = "Black";
+
+            span_result.innerHTML = `
+            Agora quem dá a bola é o Santos
+            `;
+            
+        } else if (time == 'São Paulo') {
+
+            span_result.style.background = "Black";
+            span_result.style.color = "Red";
+
+            span_result.innerHTML = `
+            Salve o Tricolor paulista  
+        `
+
+        } else {
+
+            span_result.style.background = "Red";
+            span_result.innerHTML = `Time não encontrado`
+
+        }
+
+
+
+    }
+</Script>

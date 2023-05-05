@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <Center><h1>Como esta a temperatura do seu ambiente em relação a conservação de alimentos?</h1></Center><br><br>
+
+    Temperatura do ambiente: <input id="input_tempAmp" type="text"><br><br>
+
+    <Button onclick="verifica()">Verificar clima</Button> <br><br>
+
+<div id="div_result"></div>
+
+</body>
+</html>
+
+<script>
+    function verifica() {
+        var temp = Number(input_tempAmp.value)
+    
+        if (temp < 10) {
+            div_result.innerHTML = `<center><img width ="400px" heigh ="300px "src="https://assets.folhavitoria.com.br/images/acdd88d0-3e69-0136-6560-6231c35b6685--minified.jpg" > </center>`
+        } else {
+            div_result.innerHTML = `<center><img width ="400px" heigh ="300px "src="https://static.tuasaude.com/media/article/ed/zg/como-identificar-alimentos-estragados_22594_l.jpg" > </center>`   
+        }
+}
+
+
+</script>

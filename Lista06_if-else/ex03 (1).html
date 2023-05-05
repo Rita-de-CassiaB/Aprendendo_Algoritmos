@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado Bom Doce</title>
+</head>
+<body>
+
+<center><h1>Seja Bem Vindo as promoções do Mercado Bom Doce</h1></center>
+
+  Insira a quantidade de chocolates comprados <input id="input_chocomp" type="number">  
+    <br><br>
+    <button onclick="calcular()">Compra</button>
+
+    <div id="div_result"></div>
+
+</body>
+</html>
+
+<Script>
+function calcular() {
+    var quantidade = Number(input_chocomp.value)
+    var valor
+
+    if (quantidade < 12) {
+        valor = 3.00
+        var total = (quantidade * valor)
+
+        div_result.innerHTML = `O valor da sua compra foi R$${total}` 
+
+    } else {
+        valor = 2.50
+         var total = (quantidade * valor)
+        div_result.innerHTML = `O valor da sua compra foi R$${total}` 
+    }
+
+   
+}
+
+
+
+
+</Script>

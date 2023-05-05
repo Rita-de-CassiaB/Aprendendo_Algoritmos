@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input_texto">
+    
+<button onclick="dizer()">Diga algo sobre a matéria de algoritmos</button>
+<div id="div_frase"></div>
+</body>
+</html>
+
+<Script>
+    function dizer() {
+        var texto = input_texto.value
+        var quantidade = 1
+        while (quantidade <=7 ) {
+            div_frase.innerHTML += ` ${quantidade} ${texto} <br/><br/>` 
+
+            quantidade += 1
+
+        }
+
+         }
+
+</Script>

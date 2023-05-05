@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpTech média de alunos</title>
+</head>
+<body>
+
+<center><h2> Média de aluno da SpTech </h2></center>
+
+    Insira a nota da cotinuada <input id="nota_continuada"> <br>
+    Insira a nota da semestral <input id="nota_semestral"> <br>
+    Insira o nome do aluno <input id="nome">    <br><br>
+
+<button onclick="media_aluno()">
+    Calcular a media do aluno
+    </button> 
+
+</body>
+</html>
+
+<Script>
+function media_aluno() {
+    var continuada = nota_continuada.value * 0.4
+    var semestral = nota_semestral.value * 0.6
+    var MEDIA = (continuada + semestral)
+    alert ("A média de " + nome.value + " será de " + MEDIA)
+}
+
+</Script>

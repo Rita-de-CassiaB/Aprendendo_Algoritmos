@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<center><h2>Quais são os multiplos de 7?</h2></center>
+
+Insira um número <input id="input" type="number" min="0" max="200" placeholder="0 e 200"> </br>
+<button onclick="analisar()">Viva o 7!</button>
+<div id="div_result"></div>
+
+</body>
+</html>
+<Script>
+    function analisar() {
+        var numero = Number(input.value);
+        var status = 0;
+
+        if (numero > 200) {
+            alert("Insira um número entre 0 e 200")
+
+        } else {
+
+           while (status <= numero) {
+
+         if (status % 7 == 0) {
+            div_result.innerHTML += `${status}</br>`
+         } 
+          status += 1   
+        }  
+    }
+    }
+</Script>

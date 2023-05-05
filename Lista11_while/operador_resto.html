@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Insira um número" id="input_numero"> 
+    <button onclick="avaliar()">Avaliar</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    /*
+        o resto de uma divisão é o valor que sobra quando um número é dividido por outro:    
+            se você dividir 7 por 3, o resultado seria 2 com um RESTO de 1;
+  
+        no JavaScript, podemos obter o resto de alguma divisão utilizando o símbolo de porcentagem (%), que é um OPERADOR ARITMÉTICO que retorna o resto da divisão
+            7 % 3 -> retorna 1, que é o resto dessa divisão
+
+        esse resto pode ser utilizado para validarmos se um número é múltiplo de outro, como na função "avaliar()", abaixo:
+    */
+
+    function avaliar () {
+        var numero = Number(input_numero.value);
+        
+        div_mensagem.innerHTML = "";
+
+
+        // valida se o número é múltiplo de 1 caso o resto da divisão por 1 seja 0
+        if (numero % 1 == 0) { 
+            // não passará na validação caso o número seja decimal: 2.8 dividido por 1 obteria o resultado 2 e o RESTO 0.8 
+            div_mensagem.innerHTML += "<br>O número é INTEIRO"
+        } 
+
+        if (numero % 3 == 0) { // valida se o número é multiplo de 3 caso o resto da divisão por 3 seja 0
+            div_mensagem.innerHTML += "<br>O número é múltiplo de 3"
+        }
+
+        if (numero % 5 == 0) { // valida se o número é multiplo de 5 caso o resto da divisão por 5 seja 0
+            div_mensagem.innerHTML += "<br>O número é múltiplo de 5"
+        }
+
+        if (numero % 2 == 0) {  // valida se o número é par caso o resto da divisão por 2 seja 0
+            div_mensagem.innerHTML += "<br>O número é PAR" 
+        } else { // caso o resto da divisão por 2 seja diferente de 0, significa que o número é impar
+            div_mensagem.innerHTML += "<br>O número é ÍMPAR" 
+        }
+    }
+</script>

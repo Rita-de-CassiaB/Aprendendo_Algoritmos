@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: rgba(165, 219, 236, 0.685);">
+
+
+    <h1><center> Como você era na escola?</h1> <br><br>
+    Insira a sua frequência <input type="number" id="input_frequencia"> <br><br>
+
+    <button onclick="Analise()"> Analisar frequência</button>
+    <br><br>
+
+    <div id="div_result"></div> <br><br>
+</center>
+
+</body>
+
+
+
+</html>
+<Script>
+    function Analise() {
+        var frequencia = Number(input_frequencia.value)
+
+        if (frequencia < 50) {
+            div_result.innerHTML =` <center><img  width="700px" heigh="500px" src="https://thumbs.dreamstime.com/b/turista-da-senhora-com-trouxa-39662677.jpg</center>">`
+    } 
+    else {
+        div_result.innerHTML =`  <img width="600px" heigh="400px" src="https://media.istockphoto.com/id/969531596/pt/foto/studious-student-doing-homework-late-hours-in-the-night.jpg?s=170667a&w=0&k=20&c=LhzbcBBM6HZ9tGHGqiV9dbP36a0bmOk4GrbPG3WAM2c=">`
+        
+                }
+
+ }
+
+</Script>

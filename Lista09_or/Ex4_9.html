@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento parcelado ou não</title>
+</head>
+<body>
+    
+<h2><center>Essa compra poderá ser parcelada?</center></h2>
+
+Qual o modo de pagamento?
+<select id="FormsPags">
+    <option value="Din" >Dinheiro</option>
+    <option value="CC" >Cartão de Crédito</option>
+    <option value="CD" >Cartão de Débito</option>
+    <option value="Bol" >Boleto</option>
+</select>
+
+<button onclick="Analisar()">Analisar Compra</button>
+
+<div id="div_result"></div>
+
+</body>
+</html>
+
+<Script>
+    function Analisar() {
+        var Opcoes = FormsPags.value
+
+        if (Opcoes == "Din" || Opcoes == "CD") {
+            div_result.innerHTML = `Você terá que pagar a vista`
+        } else {
+            div_result.innerHTML = `Pagamento poderá ser parcelado`
+        }
+
+    }
+</Script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Insira o limite <input id="input_limite">
+    Insira um numero para divisibilidade que esteja entre 1 e o numero informado acima <input id="input_divis">
+    <Button onclick="somar()">Somar números</Button>
+    <div id="frase"></div>
+</body>
+
+</html>
+<Script>
+    function somar() {
+        var divis = Number(input_divis.value);
+        var limite = Number(input_limite.value);
+        var soma = 0;
+
+        if (divis > limite || divis < 0) {
+            alert("Erro! Insira números válidos");
+        } else{
+
+            for (var status = 0; status <= limite; status++) {
+
+                if (status % divis == 0) {
+                    frase.innerHTML += `${status} </br>`;
+
+                }; soma += status
+            }frase.innerHTML += `Soma dos multiplos ${divis}: ${soma}`;
+        }
+    }
+</Script>

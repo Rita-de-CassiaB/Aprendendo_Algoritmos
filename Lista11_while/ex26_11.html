@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Soma de pares</h1>
+    Insira um número entre 10 e 500 <input id="input_numero">
+    <button onclick="executar()">Somar pares</button>
+    <div id="div_result"></div>
+</body>
+
+</html>
+<Script>
+    function executar() {
+        var numero = Number(input_numero.value);
+        var soma = 0;
+
+        if (numero < 10 || numero > 500) {
+            alert("Erro! Insira um valor entre 10 e 500")
+        } else {
+            for (var status = 0; status <= numero; status++) {
+                if (status % 2 == 0) {
+                    div_result.innerHTML += `${status} </br>`;
+                    
+                }; soma += status
+            }div_result.innerHTML += `Soma dos pares: ${soma}`
+            
+        }
+    }
+</Script>

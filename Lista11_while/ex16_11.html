@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+Quantas pessoas vão no carro? <input type="number" id="input_qntp">
+
+<button onclick="partiu()">#Partiu Carona</button>
+
+<div id="div_result"></div>
+</body>
+</html>
+<Script>
+    function partiu() {
+    var max = Number(input_qntp.value)
+    var status = 1;
+    div_result.innerHTML = ``
+
+ 
+         while (status < max) {
+       if (status == 1 ) {
+        div_result.innerHTML = `Entrou o ${status} passageiro que é o motorista`
+       } else if (status > 5) {
+        div_result.innerHTML = `O ${status} passageiro terá que esperar`
+       }else {
+        div_result.innerHTML = `O ${status} passageiro entrou no carro`
+        status +=1;
+       }
+    }
+
+    }
+
+</Script>

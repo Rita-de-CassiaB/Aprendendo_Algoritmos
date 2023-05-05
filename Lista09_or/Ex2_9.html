@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculdade Mentes Brilhantes</title>
+</head>
+<body>
+
+<center><h2>Seja Bem-Vindo(a) à Faculdade Mente Brilhantes</h2></center>
+
+   Nota ENEM:  <input id="input_NotEnem"> <br/><br/>
+   Nota Vestibular Interno:  <input id="input_NotInterno"> <br/><br/>
+
+   <button onclick="Avaliar()">Avaliação</button>
+
+</body>
+</html>
+<Script>
+    function Avaliar() {
+        var NotaEnem = Number(input_NotEnem.value);
+        var NotaInterno = Number(input_NotInterno.value);
+
+        if (NotaEnem >= 800 || NotaInterno >= 700) {
+            
+            alert("Parabéns! Aprovado")
+
+        } else {
+            
+            alert("Tente semestre que vem!")
+
+        }
+
+    }
+</Script>

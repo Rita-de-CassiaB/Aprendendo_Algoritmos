@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>O que é a vida? A vida é uma maravilha!</h1>
+
+    O que você mais ama na vida? <input id="input_frase"> <br/>
+    Quanto você a ama? <input id="input_quantidade" type="number"> <br/>
+
+    <button onclick="expressar()">Expressar amor</button>
+
+    <div id="div_result"></div>
+
+</body>
+</html>
+<Script>
+    function expressar() {
+        var quantidade = Number(input_quantidade.value);
+        var frase = input_frase.value;
+        var status = 1;
+
+        while (status <= quantidade) {
+            div_result.innerHTML += `${status} - ${frase} </br>`;
+
+            status += 1;
+        }
+    
+    }
+
+</Script>

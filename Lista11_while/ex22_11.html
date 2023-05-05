@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a quantidade de depósitos <input type="number" id="input_qntdep"> </br>
+    Insira o valor dos depósitos <input type="number" id="input_valordep">
+
+    <button onclick="Acompanhar()">Acompanhar grana</button>
+
+    <div id="div"></div>
+
+</body>
+</html>
+<Script>
+    function Acompanhar() {
+        var qnt = Number(input_qntdep.value);
+        var dep = Number(input_valordep.value);
+        var contador = 1;
+        var total = 0;
+
+        while (contador <= qnt) {
+             total += dep
+
+             if (contador % 3 == 0) {
+                var bonus = (total * 0.01)
+                div.innerHTML += `${contador}° Mês: R$${total+bonus} 🌟 </br>`
+
+                total += bonus;
+
+             } else {
+                div.innerHTML += `${contador}° Mês: R$${total} </br>`
+             }
+         contador += 1;
+
+        }
+div.innerHTML += `Total guardado: ${total}`;
+
+    } 
+</Script>

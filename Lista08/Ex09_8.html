@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<center><H1>Vamos analisar os pilotos?</H1></center>
+
+Qual a altura inicial desejada para os próximos pilotos? <input type="number" id="input_inicial"> <br/> 
+Qual a altura final desejada para os próximos pilotos? <input type="number" id="input_final"> <br/> <br/>
+
+Qual seu nome?<input type="text" id="input_nome"> <br/>
+Qual sua altura? <input type="number" id="input_altura"> <br/>
+
+<button onclick="avaliar()">Analisar</button> <br/><br/>
+
+<div id="divresult"></div>
+
+</body>
+</html>
+<Script>
+    function avaliar() {
+        
+        var ainicial = Number(input_inicial.value);
+        var afinal = Number(input_final.value);
+        var nome = input_nome.value;
+        var altura = Number(input_altura.value);
+
+
+        if (ainicial < 100 || afinal < ainicial ) {
+            alert("NÃO SEGUIR EM FRENTE")
+        } else if (altura > ainicial && altura < afinal) {
+           divresult.innerHTML = `O candidato ${nome} com 
+            altura de ${altura} participará do processo de seleção de piloto`
+         } else {
+            divresult.innerHTML = `Infelizmente o candidato
+             ${nome} com altura de ${altura} não atende os requisitos`
+        }
+        }
+            
+</Script>

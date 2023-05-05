@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Seja Bem-Vindo a Netflix</h1>
+
+    Informe a hora do dia que você costuma acessar a netflix <input id="input_horas">
+
+    <button  onclick="avaliacao()">Ver recomendação</button>
+
+    <div id="div_result"></div>
+</body>
+</html>
+<Script>
+
+function avaliacao() {
+    var horas = Number(input_horas.value);
+
+    if (horas > 19 && horas < 21) {
+        div_result.innerHTML = `Não é recomendável que você assista sua série favorita no horário!`;
+    } else {
+        div_result.innerHTML = `O horário é adequado para assistir sua série favorita!`
+    }
+}
+
+</Script>
