@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1> Filmes Favoritos</h1>
+
+    Filme <input id="input_filme">
+
+    <button onclick="cadastrar()">Cadastrar</button>
+
+    <div id="div_filmes"></div>
+
+</body>
+</html>
+
+<Script>
+
+    var listaFilmes = [];
+
+    function cadastrar() {
+
+        var filme = input_filme.value;
+        listaFilmes.push(filme);
+
+        div_filmes.innerHTML = ``;
+
+        for ( var posicao = 0;
+            posicao < listaFilmes.length;
+            posicao++ ) {
+            var filmelista = listaFilmes[posicao];
+
+            if (posicao % 2 == 0) {
+              div_filmes.innerHTML += `
+                <span style='color: red'>${filmelista} </span> </br>`;
+
+
+            }else {
+                div_filmes.innerHTML += `
+                <span style='color: blue'> ${filmelista} </span> </br>`
+            }
+
+            
+        }
+    }
+    
+// A primeira posição fica azul e a segunda vermelha, então se for impar ele fica azul e se for par fica vermelho
+
+
+
+</Script>

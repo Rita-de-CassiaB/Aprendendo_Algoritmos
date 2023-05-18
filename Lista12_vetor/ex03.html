@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bairros - Vetor</title>
+</head>
+<body>
+    <h1>Meus bairros</h1>
+
+    Bairro em que eu morei <input id="input_bairro" >
+    <Button onclick="Cadastrar()">Cadastrar bairro</Button></br></br>
+
+    Numero <input type="number" id="input_numero">
+    <Button onclick="Relembrar()">Relembrar moradia</Button>
+
+    <div id="div_mensagem"></div>
+
+
+</body>
+</html>
+<Script>
+
+    var lista_bairros = [];
+    
+    function Cadastrar() {
+        var bairro = input_bairro.value;
+        lista_bairros.push(bairro);
+    }
+
+    function Relembrar() {
+        var numero = Number(input_numero.value);  
+
+        if (lista_bairros.length < numero) {
+            div_mensagem.innerHTML = `Você ainda não morou num bairro`;
+        }else {
+            div_mensagem.innerHTML = lista_bairros[numero - 1]
+        }
+        
+    }
+</Script>

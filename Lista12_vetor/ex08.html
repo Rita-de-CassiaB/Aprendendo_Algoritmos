@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Cadastrando alunos</h1>
+
+    Nome do Aluno <input id="input_aluno">
+
+    <div id="div_result"></div>
+
+    <button onclick="cadastrar()">Cadastrar</button>
+
+</body>
+
+</html>
+<Script>
+    var listaAlunos = []
+
+    function cadastrar() {
+        var aluno = input_aluno.value;
+        listaAlunos.unshift(aluno);
+        div_result.innerHTML = ``;
+
+        for (var contador = 0;
+            contador < listaAlunos.length;
+            contador++) {
+
+            div_result.innerHTML += `${listaAlunos[contador]} </br>`
+
+        }
+
+
+
+
+    }
+
+//unshift - inverte os valores
+</Script>

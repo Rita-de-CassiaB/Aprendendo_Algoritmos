@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores - exfrutas</title>
+</head>
+
+<body>
+
+    <h1>Pesquisa de frutas</h1>
+
+    <input type="text" id="input_pesquisar">
+
+    <button onclick="pesquisar()">Pesquisar</button>
+    <button onclick="exibir()">Exibir</button>
+    <button onclick="cadastrar()">Cadastrar</button>
+
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<Script>
+    //    var lista_frutas = [  ]
+    var lista_frutas = ["bergamota", // 0
+        "limão", // 1
+        "morango", // 2 
+        "mamão", // 3
+        "tomate", // 4 
+        "manga" // 5
+    ]
+
+    function cadastrar() {
+        var fruta = input_pesquisar.value;
+
+        lista_frutas.push(input_pesquisar.value)
+    }
+
+
+    function exibir() {
+        div_mensagem.innerHTML = `Frutas na lista ${lista_frutas}`
+
+        for (var i = 0; i < lista_frutas.length; i++) {
+
+            div_mensagem.innerHTML += `
+        ${i}. ${lista_frutas[i]} </br> `
+        }
+
+        //A soma deve ficar onde você vai exibir
+        // o "i" é como se fosse um contador
+        //Enquanto i for menos que todas as posições da lista, mostrar a próxima palavra de acordo com a posição
+    }
+
+
+    function pesquisar() {
+        var pesquisa = input_pesquisar.value;
+        var validacao = (lista_frutas.indexOf < 0)
+
+
+        if (validacao) {
+            alert("A fruta " + pesquisa + " Não existe no vetor")
+        } else {
+            alert("A fruta " + pesquisa + " Existe no vetor")
+        }
+        
+        console.log(lista_frutas.indexOf)
+        //  console.log - chamando o console dentro do script
+        //  indexOf é uma função Utilizada para pesquisar se a pavara existe dentro do vetor "Indice de". Se não existir aparece -1, se existir aparece a posição da palavra
+        // As posições sempre começam pelo 0, por isso quando a palavra não existe é informado o valor -1
+        // teste.indexOf('bananinha123') < 0 -- Se não existir a palavra 'bananinha123'(o resultado -1)
+    }
+</Script>

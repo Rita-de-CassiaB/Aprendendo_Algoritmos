@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Destinos</h1>
+
+    Destino de viagem <input id="destino_input">
+
+    <button onclick="Analisar()">Adicionar</button>
+    <button onclick="PV()">Primeira viagem</button>
+    <button onclick="TV()">Terceira viagem</button>
+    <button onclick="UV()">Ultima viagem</button>
+
+    <div id="div_result"></div>
+
+</body>
+
+</html>
+<Script>
+    var Destino = [];
+
+    function Analisar() {
+        Destino.push(destino_input.value);
+        destino_input.value = ''
+    }
+    function PV() {
+        if (Destino.length > 0) {
+            div_result.innerHTML += `Primeira Viagem  ${Destino[0]}`
+        } else {
+            div_result.innerHTML += `Ainda não viajou`
+        }
+    }
+    function TV() {
+        if (Destino.length > 0) {
+            div_result.innerHTML += `Primeira Viagem  ${Destino[2]}`
+        } else {
+            div_result.innerHTML += `ainda não fez a 3ª viagem`
+        }
+    }
+    function UV() {
+        if (Destino.length > 0) {
+            div_result.innerHTML += `Primeira Viagem  ${Destino[Destino.length - 1]}`
+        } else {
+            div_result.innerHTML += `Ainda não viajou`
+        }
+    }
+</Script>

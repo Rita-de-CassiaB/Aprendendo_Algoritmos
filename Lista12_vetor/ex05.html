@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Cadastrando filmes favoritos</h1>
+
+    Filme <input id="input_filme">
+
+    <button onclick="cadastrarFilme()"> Cadastrar </button>
+
+    <div id="div_filmes"></div>
+    
+</body>
+</html>
+<Script>
+    var listaFilmes = [];
+
+    function cadastrarFilme() {
+        var filmes = input_filme.value;
+        listaFilmes.push(filmes);
+
+        for (var posicao = 0;
+         posicao < listaFilmes.length;
+         posicao++) {
+            
+            var filmefavorito = listaFilmes[0];
+            var filme3 = listaFilmes[2];
+            var total = listaFilmes.length;
+            
+         div_filmes.innerHTML = `
+             Seu filme favorito: ${filmefavorito} </br>
+
+             Seu 3º filme favorito:  ${filme3} </br>
+
+              Total de filmes cadastrados:  ${total}  </br>
+        `
+
+        }
+        
+
+        
+
+    }
+
+</Script>

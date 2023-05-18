@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cadastrando projetos</h1>
+
+    Insira o nome de cada projeto   <input id="input_projeto">
+
+    <button onclick="exibir()">Registrar projeto</button>
+
+    <div id="div_result"></div>
+
+</body>
+</html>
+<Script>
+
+    listaProjeto = []
+
+    function exibir() {
+        var projeto = input_projeto.value
+        listaProjeto.push(projeto)
+        var total = listaProjeto.length;
+        var quintoproj = listaProjeto[4];
+        var triproj = listaProjeto.length[12];
+        var profissional = ``
+
+        if (total <= 4) {
+            profissional = `Júnior `
+
+        } if (total > 5 && total < 12) {
+            profissional = `Pleno desde o projeto "${quintoproj}" `
+
+        } if (total > 13) {
+            profissional = ` Sênior desde o projeto " ${triproj}" `
+        }
+
+            div_result.innerHTML = `Você já fez ${total} projetos. Por isso você é um ${profissional} </br>`
+    
+
+    }
+
+</Script>

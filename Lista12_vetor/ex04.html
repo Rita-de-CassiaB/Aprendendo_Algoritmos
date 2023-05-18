@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Cadastrando filmes que mais gosto em ordem</h1>
+
+    Filme <input id="input_filme">
+
+    <button onclick="cadastrarFilme()">Cadastrar filme</button>
+    <button onclick="ver()">Ver favoritos</button>
+
+    <div id="div_filmes"></div>
+</body>
+
+</html>
+<Script>
+    var listaFilmes = [];
+
+    function cadastrarFilme() {
+
+        var filme = input_filme.value;
+        listaFilmes.push(filme);
+    }
+
+    function ver() {
+        div_filmes.innerHTML = ``;
+
+        for (var posicao = 0;
+            posicao < listaFilmes.length;
+            posicao++) {
+
+            var filmelista1 = listaFilmes[0];
+            var filmelista2 = listaFilmes[listaFilmes.length-1];
+
+        }
+
+         div_filmes.innerHTML += `O que mais gosta é${filmelista1} </br>`
+         div_filmes.innerHTML += `E desses, o que menos gosta ${filmelista2} </br>`
+    }
+
+// Para contar a posição é necessário utlizar o .length
+</Script>
