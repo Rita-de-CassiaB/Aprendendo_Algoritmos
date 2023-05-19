@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Números Aleatórios</h1>
+    <input placeholder=" min " id="input_min">
+    <input placeholder=" max " id="input_max">
+    <input placeholder=" qnt " id="input_qnt">
+
+    <button onclick="gerar()">Gerar aleatório</button>
+    <button onclick="gerar50()">Gerar aleatório até 50</button>
+    <button onclick="gerar50min()">Gerar aleatório até 50 e aumentar o minimo</button>
+    <button onclick="gerarentre()">Gerar aleatório entre 10 e 25</button>
+    <button onclick="gerarentre1e6()">Gerar aleatório entre 1 e 6</button>
+    <button onclick="pegar_aleatorio()">Exibir numeros do vetor de modo aleatorio</button>
+    <button onclick="geraraleatorio()">Gerar aleatorio min e max</button>
+
+</body>
+</html>
+
+<Script>
+
+    function gerar() { 
+        var aleatorio = Math.random()  
+        alert(aleatorio);
+    }
+    function gerar50() { 
+        var aleatorio = Math.random()*50   
+        alert(aleatorio);
+    }
+
+    function gerar50min() { 
+        var aleatorio = Math.random()*50 + 1
+        alert(aleatorio);
+    }
+    function gerarentre() {
+        var minimo = 10;
+        var maximo = 25 ;
+        var intervalo = maximo - minimo; //15
+
+        var aleatorio = Math.random() * intervalo; //14.9999
+
+        var resultado = aleatorio + minimo; //10.00 até 24.9999999999
+
+        alert(resultado);
+    }
+
+    function gerarentre1e6() {
+        var minimo = 1;
+        var maximo = 6 ;
+        var intervalo = maximo - minimo; 
+
+        var aleatorio = Math.random() * intervalo; 
+
+        var resultado = aleatorio + minimo; 
+
+        alert(resultado);
+    }
+
+    var numeros = [10, 100, 1000, 100000, 123, 321, 123, 123, 123]
+
+    function pegar_aleatorio() {
+        var limite = numeros.length -1 //2
+
+        var aleatorio = Math.random() * limite;
+        var formatado = aleatorio.toFixed();
+
+        console.log(numeros[formatado])
+        
+    }
+
+    function geraraleatorio() {
+        var limite = numeros.length -1
+        var min = Number(input_min.value); 
+        var max = Number(input_max.value);
+        var qnt = Number(input_qnt.value);
+        var intervalo = max - min;
+
+        for (var i = 0; i < qnt; i++) {
+           var aleatorio = Math.random() * limite;
+           var resultado = (aleatorio + min).toFixed();
+
+        console.log(resultado)  
+
+        
+        }
+
+    }
+
+
+
+
+
+// Gerando um numero a menos da multiplicação 
+// - se for 50, será ate 49.999999999
+// - se for 50, será ate 49.999999999
+
+
+</Script>

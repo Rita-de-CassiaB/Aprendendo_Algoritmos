@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1> Sistema de loja eletrônica</h1>
+
+    Nome do Produto <input type="text" id="input_nome"> </br></br>
+    Preço de compra <input type="text" id="input_preco"> </br></br></br>
+    <button onclick="cadastrar()">Cadastrar</button> </br></br>
+    <button onclick="relatorio()">Relatorio de Estoque</button> </br></br>
+    
+    <div id="div_result"></div>
+    <div id="div_result2"></div>
+</body>
+</html>
+
+<Script>
+
+Lista_produto = [];
+Lista_preco = [];
+
+function cadastrar() {
+   var nome  = (input_nome.value);
+   var preco = Number(input_preco.value);
+   
+   Lista_produto.push(nome)
+   Lista_preco.push(preco)
+
+}
+
+function relatorio() {
+    var total_produtos = Lista_preco.length;
+    div_result2.innerHTML = ``;
+    
+    for (var contador = 0; contador < Lista_preco.length; contador++) {
+        var produtop = Lista_preco[contador];
+        var produton = Lista_produto[contador]; 
+
+        var precovenda = produtop*1.25;
+
+        div_result.innerHTML = `
+        
+        Total de produtos: ${total_produtos} </br></br></br>`;
+
+        div_result2.innerHTML += `
+        
+        Produto ${contador}: ${produton}  </br></br>
+        Preço de compra: R$${produtop}. Vender por R$${precovenda} </br></br>
+        
+        `  
+    }
+}
+
+</Script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome do filho <input type="text" id="input_filho">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="atualizar()">Atualizar</button>
+    <div id="div_result"></div>
+</body>
+</html>
+<script>
+
+    var filhos = [];
+
+    function cadastrar() {
+        var nome = input_filho.value;
+
+
+        if (filhos.indexOf(nome) < 0) {
+            filhos.push(nome);
+        } else {
+            alert('Não pode mais de um filho com o mesmo nome!')
+        }
+    }
+
+    function atualizar() {
+        var quantidade = filhos.length;
+
+        var gasto_particular = quantidade * 3000;
+        var gasto_publica = quantidade * 1500; 
+       
+
+        div_result.innerHTML = `
+        Você tem ${filhos} filhos </br>
+    
+        
+        
+Seu custo mensal será aproximadamente R$${gasto_particular.toFixed(2)} se colocar eles em escola particular ou R$${gasto_publica.toFixed(2)} se eles estudarem em escola pública </br>
+`
+
+    }
+
+// toFixed é usado para adicionar casas decimais depois do . sendo com 0 sempre, a não ser que você declare que a variável terá casas decimais 
+
+</script>
