@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="Sortear()">aaaaaaaaaaaaaaaaaaaaaaaa</button> heigth
+    <div id="div_frase"></div>
+</body>
+</html>
+
+<Script>
+    var times = ['1', '2', '3'];
+    function Sortear() {
+        var aleatorio = Math.random()*4; 
+        console.log(aleatorio);
+
+        var numero = times.length
+        
+
+        if (aleatorio < 1) {
+            div_frase.innerHTML = `<img src="file:///C:/Users/ritad/Desktop/Faculdade/Algoritmos/Lista13_aleatorio/img/escudo-flamengo.png" alt="" width="150px">`;
+        }else if (aleatorio >= 1 && aleatorio <2) {
+            div_frase.innerHTML = `<img src="file:///C:/Users/ritad/Desktop/Faculdade/Algoritmos/Lista13_aleatorio/img/s%C3%A3o%20paulo-escudo.png" alt="" width="150px">`;
+        }else if (aleatorio >= 2 && aleatorio <3) {
+            div_frase.innerHTML = `<img src="file:///C:/Users/ritad/Desktop/Faculdade/Algoritmos/Lista13_aleatorio/img/escudopalmeiras-2048.png" alt="" width="150px">`;
+        } else {
+            div_frase.innerHTML = `<img src="file:///C:/Users/ritad/Desktop/Faculdade/Algoritmos/Lista13_aleatorio/img/escudo%20co.png" alt="" width="150px">`;
+        }
+    }
+</Script>

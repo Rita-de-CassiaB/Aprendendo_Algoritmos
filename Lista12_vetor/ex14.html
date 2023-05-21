@@ -17,6 +17,7 @@
     
     <div id="div_result"></div>
     <div id="div_result2"></div>
+    <div id="div_result3"></div>
 </body>
 </html>
 
@@ -37,12 +38,20 @@ function cadastrar() {
 function relatorio() {
     var total_produtos = Lista_preco.length;
     div_result2.innerHTML = ``;
+
+    var maisCaro = Lista_preco[0];
+    var maisBarato = Lista_preco[0];
+    var NomemaisCaro = Lista_produto[0];
+    var NomemaisBarato = Lista_produto[0];
+    var somatoria = 0
     
     for (var contador = 0; contador < Lista_preco.length; contador++) {
         var produtop = Lista_preco[contador];
         var produton = Lista_produto[contador]; 
-
+        var ordem = contador+1;
         var precovenda = produtop*1.25;
+
+        somatoria += precovenda;
 
         div_result.innerHTML = `
         
@@ -50,11 +59,30 @@ function relatorio() {
 
         div_result2.innerHTML += `
         
-        Produto ${contador}: ${produton}  </br></br>
-        Preço de compra: R$${produtop}. Vender por R$${precovenda} </br></br>
+        Produto ${ordem}: ${produton}  </br></br>
+        Preço de compra: R$${produtop}. 
+        Vender por R$${precovenda} </br></br>
         
         `  
+        if (produtop > maisCaro) {
+            maisCaro = produtop
+            NomemaisCaro = produton
+        };
+         if (produtop < maisBarato) {
+            maisBarato = produtop
+            NomemaisBarato = produton
+        }
+        var media = somatoria/Lista_preco.length;
+
     }
+    div_result2.innerHTML += `
+</br>
+        Nome produto mais Caro é ${NomemaisCaro} </br>
+        Nome produto mais Barato é ${NomemaisBarato}</br>
+        O total dos produtos é ${somatoria}  </br>
+        A média do valor dos produtos é ${media}</br>
+       
+        `
 }
 
 </Script>

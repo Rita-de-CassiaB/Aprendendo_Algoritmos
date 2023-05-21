@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <button onclick="sortearimagem()">Sortear</button> </br></br></br>
+    <img style=height:300px; src="" alt="" id="img_sorteada"></br></br>
+</body>
+</html>
+<Script>
+    Lista_imagens = ['https://i.pinimg.com/originals/68/0d/6e/680d6ee7a892609d3e17273a822b32c6.png',
+'https://imagensemoldes.com.br/wp-content/uploads/2020/03/Smurf-PNG.png',
+'https://www.magazine-hd.com/apps/wp/wp-content/uploads/2021/12/smurfs-personagens-3-500x445.png',
+'https://i.pinimg.com/originals/bd/ce/eb/bdceeb3e0665d5e1c7b687d4f1b96aa5.jpg',
+'https://static.wikia.nocookie.net/smurfs/images/d/d5/Clumsy2017thesmurfsthelostvillage.png/revision/latest?cb=20170218194034&path-prefix=pt',
+];
+    function sortearimagem() {
+
+        if (Lista_imagens.length > 0) {
+            var aleatorio = parseInt(Math.random() * Lista_imagens.length);
+
+           
+
+             img_sorteada.src = Lista_imagens[aleatorio];
+ console.log(aleatorio)
+
+        } else {
+            alert('Não há imagens para exibir');
+        }
+
+        
+    }
+    // parseInt pega o inteiro do numero, inves de arredondar
+</Script>

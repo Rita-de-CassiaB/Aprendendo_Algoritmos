@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Jogando Dados</h1>
+    <button onclick="jogar()">jogar dado</button>
+    <div id="div_result"></div>
+</body>
+</html>
+<Script>
+  lista_numeros = [
+ 'file:///C:/Users/ritad/Desktop/Faculdade/Algoritmos/Lista13_aleatorio/img/dado1.avif',
+'file:///C:/Users/ritad/Desktop/Faculdade/Algoritmos/Lista13_aleatorio/img/dado2.jpg',
+'file:///C:/Users/ritad/Desktop/Faculdade/Algoritmos/Lista13_aleatorio/img/dado3.png',
+'file:///C:/Users/ritad/Desktop/Faculdade/Algoritmos/Lista13_aleatorio/img/dado4.png',
+'file:///C:/Users/ritad/Desktop/Faculdade/Algoritmos/Lista13_aleatorio/img/dado5.jpg',
+'file:///C:/Users/ritad/Desktop/Faculdade/Algoritmos/Lista13_aleatorio/img/dado6.jpg']
+
+
+    function jogar() { 
+        var limite = lista_numeros.length -1 ;
+        var aleatorio = Math.random() * limite;
+        var resultado = Number(aleatorio.toFixed());
+
+        console.log(resultado +1);  
+
+        div_result.innerHTML = `<img src="${lista_numeros[resultado]}" alt="" width="150px">`
+
+    }
+</Script>
