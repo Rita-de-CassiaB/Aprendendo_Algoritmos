@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Antiquário Velho Valioso</title>
+</head>
+
+<body>
+  <h1>Antiquário Velho Valioso</h1>
+
+  <h2>Cadastro</h2>
+  <label for="input_codigo">Código da Peça:</label>
+  <input type="number" id="input_codigo" /><br />
+  <label for="input_valor">Valor da Peça:</label>
+  <input type="number" id="input_valor" /><br />
+  <button onclick="cadastrar()">Cadastrar</button>
+
+  <h2>Ajuste de Preço</h2>
+  <label for="input_codigoInicial">Código da Peça Inicial:</label>
+  <input type="number" id="input_codigoInicial" /><br />
+  <label for="input_codigoFinal">Código da Peça Final:</label>
+  <input type="number" id="input_codigoFinal" /><br />
+  <label for="input_percentual">Percentual de Reajuste:</label>
+  <input type="number" id="input_percentual" /><br />
+  <button onclick="ajustar()">Ajustar</button>
+
+  <h2>Lista de Peças Ajustadas</h2>
+  <div id="div_pecas_ajustadas"></div>
+
+  <h2>Resumo do Ajuste</h2>
+  <div id="div_resumo"></div>
+</body>
+
+</html>
+<Script>
+
+  Lista_codigo = [];
+  Lista_valor = [];
+  
+
+  function cadastrar() {
+    var codigo = Number(input_codigo.value);
+    var valor = Number(input_valor.value);
+
+    if (codigo > 3999 || codigo < 1000) {
+      alert("Erro! o código deve estar entre 1000 e 3999");
+    } else if (valor < 100) {
+      alert("Erro! o valor deve ser maior ou igual a 100,00");
+    } else {
+
+      Lista_codigo.push(codigo);
+      Lista_valor.push(valor);
+    }
+  };
+
+
+  function ajustar() {
+    var codigo = Number(input_codigo.value);
+    var valor = Number(input_valor.value);
+
+    var codigopi = Number(input_codigoInicial.value);
+    var codigopf = Number(input_codigoFinal.value);
+    var intervalo = (codigopf - (codigopi - 1));
+    var percentual = Number(input_percentual.value);
+    var percentualf = percentual / 100
+
+
+    var soma = 0
+    var maisBarato = Lista_valor[0];
+    var maisCaro = Lista_valor[0];
+    var ajustados = 0
+
+
+    if (Lista_codigo == 0) {
+      alert("O ajuste é realizado somente após o cadastramento das peças");
+    } else if (percentual <= 0) {
+      alert("Entre com o percentual de reajuste");
+    } else {
+
+      for (var posicao = 0; posicao < Lista_codigo.length; posicao++) {
+        var valorprod = Lista_valor[posicao];
+
+        var valorvendap = valorprod[posicao] + (valorprod[posicao] * percentualf);
+        var valorvenda = valorprod + (valorprod * percentualf);
+
+        ajustados += 1;
+        soma += valorvenda;
+
+      }
+
+      for (var i = 0; i < intervalo; i++) {
+        var valorprod = Lista_valor[i];
+        var valorajuste = Number(valorprod + (valorprod * percentualf));
+        var codigoajuste =  Lista_codigo[i];
+        
+      div_pecas_ajustadas.innerHTML += `
+           Código da peça = ${codigoajuste}  - Valor anterior ${valorprod} - Valor Ajustado = ${valorajuste}</br><b>
+             `;
+
+
+             if (Lista_valor[i] < maisBarato) {
+                maisBarato = Lista_valor[i];
+            }
+      }
+
+      
+      somaformatada = Number((soma).toFixed(2));
+      media = somaformatada / ajustados;
+
+
+        div_resumo.innerHTML = ` </br><b> RESUMO DO AJUSTE das Peças de ${codigopi} até ${codigopf} </b> </br></br>
+    Total de registros ajustados: ${ajustados} </br>
+    Valor total das peças com preço ajustado: R$${somaformatada} </br>
+    Valor médio das peças com preço ajustado: R$${media} </br>
+    Menor valor após o ajuste: R$${maisBarato} </br>
+  `
+    };
+  };
+
+
+
+
+
+
+
+</Script>

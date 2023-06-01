@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> campanha de um time de futebol</h1>
+    Indique o resultado <input id="input_combo">
+    <Button onclick="Registrar()">Registrar jogo</Button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<Script>
+
+Lista_combo = ['Vitoria', 
+'Empate',
+'Derrota' ];
+
+function Registrar()
+var combo = input_combo.value;
+Lista_combo.push(combo)
+for (var index = 0; index < Lista_combo.length; index++) {
+    var vitoria = Lista_combo[index];
+    var totalv =+ vitoria;
+    var totale =+ empate;
+    
+}
+
+div_resultado.innerHTML = `O time teve:  vitórias, E empates, D derrotas 
+
+Pontuação total: X pontos 
+
+Aproveitamento: Y% `
+
+
+</Script>

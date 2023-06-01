@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome do produto: <input id="input_nome_produto"><br>
+    Preço de compra: <input id="input_preco_compra"><br>
+    <button onclick="cadastrarProduto()">
+        Cadastrar
+    </button>
+    <button onclick="verRelatorioEstoque()">
+        Relatório de estoque
+    </button>
+    <div id="div_relatorio"></div>
+</body>
+</html>
+
+<script>
+
+    var listaPrecoProduto = [];
+    var listaNomeProduto = [];
+    function cadastrarProduto() {
+        var nomeProduto = input_nome_produto.value;
+        var precoProduto = Number(input_preco_compra.value);
+
+        listaPrecoProduto.push(precoProduto);
+        listaNomeProduto.push(nomeProduto);
+    }
+
+    function verRelatorioEstoque() {
+        div_relatorio.innerHTML = `
+            Total de produtos: ${listaNomeProduto.length} <br><br>
+        `;
+
+        var maisCaro = listaPrecoProduto[0];
+        var maisBarato = listaPrecoProduto[0];
+        var nomeMaisCaro = listaNomeProduto[0];
+        var nomeMaisBarato = listaNomeProduto[0];
+
+        var somatoriaPrecosCompra = 0;
+        var somatoriaPrecoVenda = 0;
+
+        for (var posicao = 0; posicao < listaNomeProduto.length; posicao += 1) {
+
+            var precoCompra = listaPrecoProduto[posicao]; 
+            somatoriaPrecosCompra += precoCompra;
+
+            var precoVenda = precoCompra * 1.25;
+            somatoriaPrecoVenda += precoVenda;
+
+            div_relatorio.innerHTML += `
+                Produto ${posicao + 1}: ${listaNomeProduto[posicao]} 
+                <br>
+                Preço de compra: R$${precoCompra}. 
+                Vender por R$${precoVenda} <br><br>
+            `;
+
+            if (listaPrecoProduto[posicao] > maisCaro) {
+                maisCaro = listaPrecoProduto[posicao];
+                nomeMaisCaro = listaNomeProduto[posicao];
+            }
+
+            if (listaPrecoProduto[posicao] < maisBarato) {
+                maisBarato = listaPrecoProduto[posicao];
+                nomeMaisBarato = listaNomeProduto[posicao];
+            }
+
+        }
+
+        var mediaPrecosVenda = somatoriaPrecoVenda / listaPrecoProduto.length;
+        div_relatorio.innerHTML += `
+            Nome do produto mais barato: ${nomeMaisBarato}
+            <br>
+            Nome do produto mais caro: ${nomeMaisCaro}
+            <br>
+            A soma dos preços de compra dos produtos é: ${somatoriaPrecosCompra}
+            <br>
+            A média de preço de venda dos produtos é: ${mediaPrecosVenda}
+        `;
+    }
+</script>

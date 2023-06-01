@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite um numero qualquer<input type="number" id="input_numero">
+
+    <Button onclick="Analisar()">Analisar histórico</Button>
+</body>
+</html>
+<Script>
+
+Lista_number = [];
+
+    function Analisar() {
+        var numero = Number(input_numero.value);
+        Lista_number.push(numero);
+    }
+</Script>
