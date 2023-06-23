@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <b>BUSCACEP</b> <br><br>
+    CEP<input oninput="buscarCEP()" type="text" id="input_cep"> <br>
+    LOGRADOURO<input type="text" id="input_logradouro"><br>
+    <!-- <button onclick="buscarCEP()">Buscar CEP</button> -->
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<Script>
+
+    // function buscarCEP() {
+        // var Cep = input_cep.value;
+        // var url = `https://viacep.com.br/ws/${Cep}/json/`
+
+
+
+    //     if (Cep.length >= 8) {
+    //         console.log(
+    //             fetch(url)
+    //         )
+
+    //         fetch(url)
+    //             .then(
+    //                 function (resposta) {
+    //                     console.log("DEU CERTO!");
+    //                     console.log("Resposta:", resposta);
+
+    //                     resposta.json()
+    //                         .then(
+    //                             function (respostaJson) {
+    //                                 console.log("JSON:", respostaJson);
+    //                                 console.log("Logradouro:" + respostaJson.logradouro);
+    //                                 div_mensagem.innerHTML = `${respostaJson.cep}<br>
+    //                             ${respostaJson.logradouro}<br>
+    //                             ${respostaJson.localidade}<br>
+    //                             `;
+    //                                 input_logradouro.value = respostaJson.logradouro
+    //                             })
+    //                 })
+    //             .catch(
+    //                 function (erro) {
+    //                     console.log("Erro: ");
+    //                     console.log(erro);
+    //                 })
+    //     }
+    // }
+
+
+    /* Puxando dados da API Viacep e mostrando com innnerHTML, facilitando a aparição com if 
+    Função assíncrona*/
+
+    async function buscarCEP()
+    var Cep = input_cep.value;
+        var url = `https://viacep.com.br/ws/${Cep}/json/`
+
+    if (Cep.length >= 8) {
+        try {
+            var resposta = await fetch(url);
+            if (resposta.ok) {
+                var respostaJson = await resposta.jason();
+
+                console.log("JSON:", respostaJson)
+                console.log("Logradouro:" + respostaJson.logradouro)
+
+                div_mensagem.innerHTML = `
+            CEP: ${respostaJson.cep} <br>
+            Lougadouro ${respostaJson.logradouro}<br>
+            `;
+                input_logradouro.value = respostaJson.logadouro;
+            }
+        } catch (e) {
+            console.log("Erro:", e)
+        }
+    }
+</Script>

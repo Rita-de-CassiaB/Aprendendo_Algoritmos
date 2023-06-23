@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Número 1 <input id="input_na" type="number">
+    Número 2 <input id="input_nb" type="number">
+    Número 3 <input id="input_nc" type="number">
+    Número 4 <input id="input_nd" type="number">
+    Número 5 <input id="input_ne" type="number">
+    <Button onclick="ordenar()">Ordenar</Button>
+
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<Script>
+    numeros = [];
+    ordenador = [];
+
+    function ordenar() {
+        var na = Number(input_na.value);
+        var nb = Number(input_nb.value);
+        var nc = Number(input_nc.value);
+        var nd = Number(input_nd.value);
+        var ne = Number(input_ne.value);
+
+        numeros.push(na, nb, nc, nd, ne);
+
+        for (var a = 0; a < numeros.length; a++) {
+
+            for (var b = 0; b < numeros.length; b++) {
+
+                if (numeros[a] > numeros[b]) {
+
+                    var auxiliar = lista[b]
+
+                    lista[b] = lista[a]
+                    lista[a] = auxiliar;
+                }
+            }
+        }
+
+/* Algoritmo de ordenação: Buble Sort - Relação inversa de proporção(quanto maior o número, a bolha vai para baixo)
+Estando com um for dentro do outro, a função irá rodar 64x
+Deve-se usar o auxiliar, pois quando a lista[b] é transformada em lista[a], o lista[b] se perde,
+então armazenando ele fica mais fácil de chamá-lo e recuperá-lo
+
+Atividade em grupo
+SLIDE: Código(pode ser pronto, sendo melhor estando no VSCODE)
+ + O que é (para o que serve)
+  + Curiosidade (quem criou) 
+   + Complexidade (Dentro do wikipédia)
+
+   -- Entendimento macro do código e apresentação para sala 
+   
+    */
+    }
+</Script>
